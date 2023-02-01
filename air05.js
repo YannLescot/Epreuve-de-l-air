@@ -12,33 +12,31 @@ function NewArray(inputPath){
 }
 
 
-function OperationResults(resultArray){
-    let tempResult = "";
-
-    for(i = 0; i < resultArray.length; i++){
-        tempResult += resultArray[i] + " ";
-    }
-
-    return tempResult;
-}
-
 
 function AddOrSub(nbrList, operatorSign, operatorNumber){
-    let result = [];
+    if(enoughArg(path) && isNumberArray(nbrList)){
+        if(isSign(operatorSign) && isSignNumber(operatorNumber)){
+            let result = [];
 
-    // Addition
-    if(operatorSign == "+"){
-        for(i = 0; i < nbrList.length; i++){
-            result.push(Addition(nbrList[i], operatorNumber));
-        }
-        return result;
+            // Addition
+            if(operatorSign == "+"){
+                for(i = 0; i < nbrList.length; i++){
+                    result.push(Addition(nbrList[i], operatorNumber));
+                }
+                return result;
 
-    // Subtraction    
-    }else if(operatorSign == "-"){
-        for(i = 0; i < nbrList.length; i++){
-            result.push(Subtraction(nbrList[i], operatorNumber));
+            // Subtraction    
+            }else if(operatorSign == "-"){
+                for(i = 0; i < nbrList.length; i++){
+                    result.push(Subtraction(nbrList[i], operatorNumber));
+                }
+                return result;
+            }
+        }else{
+            return "Error!"
         }
-        return result;
+    }else{
+        return "Error!";
     }
 }
 
@@ -53,8 +51,64 @@ function Subtraction(nbr1, nbr2){
 }
 
 
+
+function OperationResults(resultArray){
+    if(resultArray == "Error!"){
+        
+        return resultArray;
+
+    }else{
+        let tempResult = "";
+
+        for(i = 0; i < resultArray.length; i++){
+            tempResult += resultArray[i] + " ";
+        }
+
+        return tempResult;
+    }
+}
+
+
 // Error:
 
+function enoughArg(inputPath){
+    if(inputPath.length >= 4){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isNumberArray(inputNbrArray){
+    for(i = 0; i < inputNbrArray; i++){
+        if(!isNaN(inputNbrArray[i])){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+
+function isSign(sign){
+    if(sign == "+" || sign == "-"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+function isSignNumber(opeNumber){
+    for(i = 0; i < opeNumber.length; i++){
+        if(isNaN(opeNumber.indexOf(i))){
+            return false;
+        }
+    }
+    return true;
+}
+
+ 
 
 // Parsing:
 
@@ -71,3 +125,4 @@ let results = OperationResults(AddOrSub(inputNumbers, opeSign, opeNbr));
 // Display:
 
 console.log(results);
+
