@@ -13,22 +13,24 @@ function NewArray(inputPath){
 
 
 
-function AddOrSub(nbrList, operatorSign, operatorNumber){
-    if(enoughArg(path) && isNumberArray(nbrList)){
+function AddOrSub(inputNbrs, operatorSign, operatorNumber){
+    
+    // Check errors:
+    if(enoughArg(inputNbrs) && isNumberArray(inputNbrs)){
         if(isSign(operatorSign) && isSignNumber(operatorNumber)){
             let result = [];
-
+            
             // Addition
             if(operatorSign == "+"){
-                for(i = 0; i < nbrList.length; i++){
-                    result.push(Addition(nbrList[i], operatorNumber));
+                for(i = 0; i < inputNbrs.length; i++){
+                    result.push(Addition(inputNbrs[i], operatorNumber));
                 }
                 return result;
 
             // Subtraction    
             }else if(operatorSign == "-"){
-                for(i = 0; i < nbrList.length; i++){
-                    result.push(Subtraction(nbrList[i], operatorNumber));
+                for(i = 0; i < inputNbrs.length; i++){
+                    result.push(Subtraction(inputNbrs[i], operatorNumber));
                 }
                 return result;
             }
@@ -53,10 +55,9 @@ function Subtraction(nbr1, nbr2){
 
 
 function OperationResults(resultArray){
-    if(resultArray == "Error!"){
-        
+    if(resultArray == "Error!"){ 
         return resultArray;
-
+    
     }else{
         let tempResult = "";
 
@@ -71,8 +72,8 @@ function OperationResults(resultArray){
 
 // Error:
 
-function enoughArg(inputPath){
-    if(inputPath.length >= 4){
+function enoughArg(inputNumbersArray){
+    if(inputNumbersArray.length >= 2){
         return true;
     }else{
         return false;
@@ -81,12 +82,11 @@ function enoughArg(inputPath){
 
 function isNumberArray(inputNbrArray){
     for(i = 0; i < inputNbrArray; i++){
-        if(!isNaN(inputNbrArray[i])){
-            return true;
-        }else{
+        if(isNaN(inputNbrArray[i])){
             return false;
         }
     }
+    return true;
 }
 
 
