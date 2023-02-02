@@ -12,8 +12,7 @@ function NewArray(inputPath){
 }
 
 
-function IsStringInArray(inputArray, string){
-    
+function IsStringInArray(inputArray, string){  
     if(IsEnoughArg(inputArray)){
         let newStringArray = [];
 
