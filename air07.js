@@ -13,32 +13,47 @@ function NewArray(inputPath){
 
 
 
-function SortedInsert(array, newItem){
-    let tempArray = [];
+function SortedInsert(sortedArray, newItem){
+    if(IsEnoughArg(sortedArray) && isNumber(path)){
+        if(isSort(sortedArray)){
+            let tempArray = [];
+             
+            for(i = 0; i < sortedArray.length; i++){
+                
+                // if element to insert is lower:
+                if(newItem < sortedArray[i]){
+                    tempArray.push(newItem);
 
-    for(i = 0; i < array.length; i++){
-        if(newItem < array[i]){
-            tempArray.push(newItem);
-            
-            for(j = i; j < array.length; j++){
-                tempArray.push(array[j]);
+                    // then add the rest of sorted array:
+                    for(j = i; j < sortedArray.length; j++){
+                        tempArray.push(sortedArray[j]);
+                    }
+                    return tempArray;
+                
+                // if element to insert is higher:    
+                }else{
+                    tempArray.push(sortedArray[i]);            
+                }
             }
+            tempArray.push(newItem);
             return tempArray;
         
         }else{
-            tempArray.push(array[i]);            
+            return "Error!";
         }
+    }else{
+        return "Error!";
     }
-
-    tempArray.push(newItem);
-    return tempArray;
 }
 
 
 
 function ArrayToString(outputArray){
+    // to have a string display:
+    
     if(outputArray == "Error!"){
         return outputArray;
+    
     }else{
         let tempString = "";
     
@@ -51,6 +66,38 @@ function ArrayToString(outputArray){
 
 // Errors:
 
+function IsEnoughArg(sortedIntList){
+    if(sortedIntList.length >= 2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+function isNumber(pathArray){
+    for(i = 2; i < pathArray.length; i++){
+        let item = pathArray[i];
+        
+        if(isNaN(item)){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function isSort(intList){
+    for(i = 0; i < intList.length -1; i++){
+        let item = intList[i];
+        let nextItem = intList[i+1];
+
+        if(item > nextItem){
+            return false;
+        }
+    }
+    return true;
+}
 
 // Parsing:
 
