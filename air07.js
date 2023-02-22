@@ -50,7 +50,7 @@ function SortedInsert(sortedArray, newItem){
 
 function ArrayToString(outputArray){
     // to have a string display:
-    
+
     if(outputArray == "Error!"){
         return outputArray;
     
@@ -75,7 +75,7 @@ function IsEnoughArg(sortedIntList){
 }
 
 
-function isNumber(pathArray){
+function IsNumber(pathArray){
     for(i = 2; i < pathArray.length; i++){
         let item = pathArray[i];
         
@@ -87,7 +87,7 @@ function isNumber(pathArray){
 }
 
 
-function isSort(intList){
+function IsSort(intList){
     for(i = 0; i < intList.length -1; i++){
         let item = intList[i];
         let nextItem = intList[i+1];

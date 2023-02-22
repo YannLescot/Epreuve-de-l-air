@@ -33,6 +33,15 @@ function ArrayToString(outputArray){
     if(outputArray == "Error!"){
         return outputArray;
     }else{
+        /////////// Test with Reduce //////////////
+        // const newList = outputArray.reduce(function(acc, currItem){
+        //     acc += currItem + " ";
+        //     return acc;
+        // }, "");
+
+        // return newList;
+        /////////////////////////////////////////
+        
         let newList = "";
 
         for(i = 0; i < outputArray.length; i++){
