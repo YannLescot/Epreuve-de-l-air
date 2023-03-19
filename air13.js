@@ -1,6 +1,5 @@
 /////////////// Meta exercice //////////////
 const colors = require('colors');
-
 const fs = require('fs');
 const vm = require('vm');
 
