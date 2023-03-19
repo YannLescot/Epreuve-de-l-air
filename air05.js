@@ -118,11 +118,21 @@ let opeSign = path[path.length-1].charAt(0);
 let opeNbr = path[path.length-1].substring(1);
 
 
+
 // Resolve:
 
 let results = OperationResults(AddOrSub(inputNumbers, opeSign, opeNbr));
+
+
 
 // Display:
 
 console.log(results);
 
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return results;
+}

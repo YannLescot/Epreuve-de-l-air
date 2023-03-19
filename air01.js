@@ -72,3 +72,10 @@ let textArray = Split(inputText, separator);
 // Display:
 
 ShowSplitText(textArray);
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return textArray;
+}

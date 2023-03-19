@@ -18,10 +18,6 @@ function CreateArrayList(pathArray){
 
 
 
-function ShowIntruder(intruder){
-    console.log(intruder);
-}
-
 
 
 function FindIntruder(inputArray){
@@ -90,6 +86,13 @@ function InPrvItems(item, ArrayItems){
 }
 
 
+
+function ShowIntruder(intruder){
+    console.log(intruder);
+}
+
+
+
 // Error:
 
 function NoError(array){
@@ -114,3 +117,11 @@ let intruder = FindIntruder(newArray);
 // Display:
 
 ShowIntruder(intruder);
+
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return intruder;
+}

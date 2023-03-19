@@ -63,10 +63,22 @@ const path = process.argv;
 let inputArray = NewArray(path);
 let refString = path[path.length-1];
 
+
+
 // Resolve:
 
-let newArray = IsStringInArray(inputArray, refString);
+let newArray = ArrayToString(IsStringInArray(inputArray, refString));
+
+
 
 // Display:
 
-console.log(ArrayToString(newArray));
+console.log(newArray);
+
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return newArray;
+}

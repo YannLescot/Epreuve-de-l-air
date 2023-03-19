@@ -116,9 +116,17 @@ let list2 = NewArray(path, indexF +1, path.length);
 
 // Resolve:
 
-let list3 = SortedFusion(list1, list2);
+let list3 = ArrayToString(SortedFusion(list1, list2));
 
 
 // Display:
 
-console.log(ArrayToString(list3));
+console.log(list3);
+
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return list3;
+}

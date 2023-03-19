@@ -52,3 +52,10 @@ let newString = CompareStringChars(inputString);
 // Display:
 
 console.log(newString);
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return newString;
+}

@@ -66,3 +66,10 @@ let newString = Concat(stringArray, separatorInput);
 // Display:
 
 ShowString(newString);
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return newString;
+}

@@ -88,8 +88,15 @@ let myList = createList(path);
 myNewList = quickSort(myList);
 
 
+
 // Display:
 
 console.log(...myNewList);
 
 
+
+// 'air13.js' test:
+
+function air13Test(){
+    return myNewList;
+}

@@ -71,10 +71,22 @@ const path = process.argv;
 let myArray = CreateArray(path);
 
 
+
 // Resolve:
 
-myNewArray = LeftRotation(myArray);
+let myNewArray = ArrayToString(LeftRotation(myArray));
+
+
 
 // Display:
 
-console.log(ArrayToString(myNewArray));
+console.log(myNewArray);
+
+
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return myNewArray;
+}

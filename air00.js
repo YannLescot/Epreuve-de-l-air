@@ -2,6 +2,7 @@
 
 // Functions:
 
+
 function Split(text, separator){
     let array = [];
     let word = "";
@@ -55,13 +56,22 @@ function NoError(text){
 
 // Parsing:
 
-const inputText = process.argv[2];
+let path = process.argv;
+let inputText = path[2];
 
 
 // Resolve:
 
 let textArray = Split(inputText, " ");
 
+
 // Display:
 
 ShowSplitText(textArray);
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return textArray;
+}

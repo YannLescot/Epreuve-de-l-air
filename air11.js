@@ -16,8 +16,9 @@ function newArray(floors){
 
 
 function pyramide(char, floors, myArray){
-    if(isError(char, floors)){
+    if(isNoError(char, floors)){
         let newLine = '';
+        let pyrArray = [];
 
         // build lines
         for(i = 0; i < floors; i++){
@@ -34,18 +35,32 @@ function pyramide(char, floors, myArray){
             for(const item of myArray){
                 newLine += item;
             }
-            console.log(newLine); ;
+            
+            pyrArray.push(newLine);
+            // console.log(newLine);
         }
+        return pyrArray;
     }
     else{
-        console.log("Error!");
+        return "Error!";
     }
 }
 
 
+function showPyramide(myPyramidArray){
+    if(myPyramidArray === "Error!"){
+        console.log(myPyramidArray);
+    }else{
+        for(i = 0; i < myPyramidArray.length; i++){
+            console.log(myPyramidArray[i]);
+        }
+    }
+
+}
+
 
 // Errors:
-function isError(inputChar, inputFloors){
+function isNoError(inputChar, inputFloors){
     if(inputChar && inputFloors){
         if(inputChar.length == 1 && !isNaN(inputFloors)){
             return true;
@@ -64,7 +79,19 @@ const inputChar = path[2];
 const inputFloorsNbr = parseInt(path[3]);
 const myArray = newArray(inputFloorsNbr);
 
-// Resolve/ Display:
+
+// Resolve:
+
 let myPyramid = pyramide(inputChar, inputFloorsNbr, myArray);
 
 
+// Display:
+
+showPyramide(myPyramid);
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return myPyramid;
+}

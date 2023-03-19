@@ -14,8 +14,8 @@ function NewArray(inputPath){
 
 
 function SortedInsert(sortedArray, newItem){
-    if(IsEnoughArg(sortedArray) && isNumber(path)){
-        if(isSort(sortedArray)){
+    if(IsEnoughArg(sortedArray) && IsNumber(path)){
+        if(IsSort(sortedArray)){
             let tempArray = [];
              
             for(i = 0; i < sortedArray.length; i++){
@@ -108,9 +108,18 @@ let newElement = path[path.length-1];
 
 // Resolve:
 
-let newArray = SortedInsert(inputArray, newElement);
+let newArray = ArrayToString(SortedInsert(inputArray, newElement));
+
 
 
 // Display:
 
-console.log(ArrayToString(newArray));
+console.log(newArray);
+
+
+
+// 'air13.js' test:
+
+function air13Test(){
+    return newArray;
+}
