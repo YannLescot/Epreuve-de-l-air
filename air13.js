@@ -388,7 +388,21 @@ function inputTest(fileName){
 
 // Resolve:
 
+function ExerciseTest(airFile, exNb, argvArr, requireNeeded, exOutArr, toStrNeeded,){
+              context = {           // 1) Give args to the script
+              process: {
+                argv: argvArr[exNb]
+              },
+                require: requireNeeded ? require : null
+            }; 
+            vm.createContext(context); // 2) 
+            vm.runInContext(airFile, context); // 3) Run the script with context we build before        
+            output = context.air13Test(); // Result 
+            expectedOutput = exOutArr[exNb]; // Expected result
+            test = toStrNeeded ? (output.toString() === expectedOutput.toString()) : (output === expectedOutput)
 
+            break;
+}
 
 // Display:
 
